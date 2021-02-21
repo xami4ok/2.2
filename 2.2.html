@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.5.1.js"></script>
+        <script>
+            var n;
+            var color = "red";
+            function speed(){
+                n = parseInt($("#speed").val(), 10);
+               // console.log(n)
+            }
+
+            function red(){
+                color='red';
+               // console.log("1");
+                $('#txt').css('backgroundColor', color);
+
+
+            }
+            function blue(){
+                color='blue';
+               // console.log("2");
+                $('#txt').css('backgroundColor', color);
+
+            }
+            function green(){
+                color='green';
+                //console.log("3");
+                $('#txt').css('backgroundColor', color);
+
+            }
+
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    $("#txt").animate({width: '250px'},n);
+                });
+
+                $("#btn2").click(function(){
+                    $("#txt").animate({width: '50px'},n);
+                });
+
+                $("#btn3").click(function(){
+                    $("#txt").animate({height: '250px'},n);
+                });
+
+                $("#btn4").click(function(){
+                    $("#txt").animate({height: '50px'},n);
+                });
+
+                $('#txt').css('backgroundColor', color);
+            });
+        </script>
+    </head>
+
+    <body>
+        <button id="btn1">Широкий</button>
+        <button id="btn2">узкий</button>
+        <button id="btn3">Высокий</button>
+        <button id="btn4">Низкий</button><br>
+        <input type="textarea" id="speed"/>
+        <button id="Okk" onclick="speed();">задать скорость (в млск)</button><br>
+        <button id='r1' onclick="red()">red</button>
+        <button id='r2' onclick="blue()">blue</button>
+        <button id='r3' onclick="green()">green</button>
+
+        <div id="txt" style="height:50px; width:50px;"></div>
+    </body>
+</html>
